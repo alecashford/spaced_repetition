@@ -1,0 +1,1 @@
+This is an app intended to assist in rapid memorization of the 200 most ordered cocktails, for aspiring bartenders. It uses a variant of the SuperMemo2 algorithm to calculate the ideal time to review a cocktail recipe based on past performace.

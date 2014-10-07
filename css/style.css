@@ -1,0 +1,66 @@
+#mainPopup {
+	/*background: url('../../background.png');*/
+	padding: 10px;
+	height: 200px;
+	width: 400px;
+	font-family: Helvetica, Ubuntu, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+.textbox li {
+	list-style-type: none;
+	float: left;
+	margin: 0px 5px 5px 0px;
+}
+
+.name {
+	text-align: center;
+	position: absolute;
+	z-index: 1;
+}
+
+
+.recipe {
+	text-align: center;
+	/*position: absolute;*/
+	z-index: 2;
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+}
+
+.textbox {
+	vertical-align:middle
+}
+
+#buttons {
+	/*float: bottom;*/
+	position: absolute;
+	bottom: 0;
+}
+
+.ng-hide-remove {
+  -webkit-backface-visibility: visible !important;
+          backface-visibility: visible !important;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-animation-name: zoomInDown;
+          animation-name: zoomInDown;
+  display: block !important;
+}
+
+.ng-hide-add {
+  -webkit-animation-name: zoomOutUp;
+          animation-name: zoomOutUp;
+  -webkit-animation-duration: .75s;
+          animation-duration: .75s;
+  -webkit-backface-visibility: visible !important;
+          backface-visibility: visible !important;
+  display: block !important;
+}
