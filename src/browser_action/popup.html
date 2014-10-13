@@ -7,20 +7,26 @@
 	<script type="text/javascript" src="../../js/angular/angular-animate.js"></script>
 	<script type="text/javascript" src="../../js/controllers.js"></script>
 </head>
-<body ng-app="app" ng-controller="MainController" ng-init="fillQueue()" ng-keydown="myFunct($event)">
+<body ng-app="app" ng-controller="MainController" ng-init="fillQueue()" ng-keydown="keyReader($event)">
 	<div id="mainPopup">
 		<div class="textbox">
-			<ul>
-			<li><span class="name centered" ng-show="rightSideUp">{{currentCard.name}}</span></li>
+			<div ng-show="!noMoreCards()">
+				<ul>
+				<li><span class="name centered" ng-show="rightSideUp">{{currentCard.name}}</span></li>
 				<li ng-repeat="line in currentCard.recipe" class="recipe centered" ng-hide="rightSideUp"><span>{{line}}</span></li>
-			</ul>
-			<div id="buttons">
-				<button ng-click="rateCard(0)">0</button>
-				<button ng-click="rateCard(1)">1</button>
-				<button ng-click="rateCard(2)">2</button>
-				<button ng-click="rateCard(3)">3</button>
-				<button ng-click="rateCard(4)">4</button>
-				<button ng-click="rateCard(5)">5</button>
+				</ul>
+				<div id="buttons" ng-hide="rightSideUp">
+					<button ng-click="rateCard(0)">0</button>
+					<button ng-click="rateCard(1)">1</button>
+					<button ng-click="rateCard(2)">2</button>
+					<button ng-click="rateCard(3)">3</button>
+					<button ng-click="rateCard(4)">4</button>
+					<button ng-click="rateCard(5)">5</button>
+				</div>
+			</div>
+			<div ng-show="noMoreCards()">
+				<span>No more cards to review for today!</span>
+				<button ng-click="getFreshCards()">Learn more?</button>
 			</div>
 		</div>
 	</div>
