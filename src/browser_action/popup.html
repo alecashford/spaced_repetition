@@ -12,8 +12,8 @@
 		<div class="textbox">
 			<div ng-show="!noMoreCards()">
 				<ul>
-				<li><span class="name centered" ng-show="rightSideUp">{{currentCard.name}}</span></li>
-				<li ng-repeat="line in currentCard.recipe" class="recipe centered" ng-hide="rightSideUp"><span>{{line}}</span></li>
+				<li><span class="name" ng-show="rightSideUp">{{currentCard.name}}</span></li>
+				<li ng-repeat="line in currentCard.recipe" class="recipe" ng-hide="rightSideUp"><span>{{line}}</span></li>
 				</ul>
 				<div id="buttons" ng-hide="rightSideUp">
 					<button ng-click="rateCard(0)">0</button>
