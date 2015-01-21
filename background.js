@@ -3,7 +3,7 @@ setInterval(function() {
 	var queue = [];
 
 	chrome.storage.local.get(function(data) {
-		if (Object.keys(data).length > 0) {
+		if (Object.keys(data).length === 0) {
 			chrome.browserAction.setBadgeText({text: ""});
 		} else if (Object.keys(data).length > 0) { // returns true if data object is empty
 			for (var cocktail in data) {
@@ -17,4 +17,4 @@ setInterval(function() {
 	})
 
 
-}, 5 * 1000);
+}, 60 * 1000);

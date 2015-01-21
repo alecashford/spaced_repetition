@@ -12,7 +12,6 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 		} else {
 			$scope.currentCard = null;
 			chrome.browserAction.setBadgeText({text: ''});
-			// $scope.getFreshCards()
 		}
 	}
 
@@ -28,10 +27,12 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 					    && data[cocktail].nextDate < new Date().getTime()) {
 						$scope.$apply(function() {
 							$scope.queue.push(data[cocktail]);
-							$scope.updateCurrentCard()
 						});
 					}
 				}
+				$scope.$apply(function() {
+					$scope.updateCurrentCard();
+				})
 			}
 		})
 	}

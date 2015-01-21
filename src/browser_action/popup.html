@@ -9,7 +9,7 @@
 </head>
 <body ng-app="app" ng-controller="MainController" ng-init="fillQueue()" ng-keydown="keyReader($event)">
 	<div id="mainPopup">
-		<span ng-hide="noMoreCards()">{{howManyCardsLeftText()}}</span>
+		<span id="counter" ng-hide="noMoreCards()">{{howManyCardsLeftText()}}</span>
 		<div class="textbox">
 			<div ng-hide="noMoreCards()">
 				<span class="name" ng-show="rightSideUp">{{currentCard.name}}</span>
@@ -26,8 +26,8 @@
 				</div>
 			</div>
 			<div ng-show="noMoreCards()">
-				<span>No more cards to review for today!</span>
-				<button ng-click="getFreshCards()">Learn more?</button>
+				<span id="no_more_text">No more cards to review for today!</span>
+				<button id="no_more_text" ng-click="getFreshCards()">Learn more?</button>
 			</div>
 		</div>
 	</div>
