@@ -23,7 +23,7 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 			} else {
 				for (var cocktail in data) {
 					if (data.hasOwnProperty(cocktail)
-					  && data[cocktail].nextDate < new Date().getTime()) {
+					    && data[cocktail].nextDate < new Date().getTime()) {
 						$scope.$apply(function() {
 							$scope.queue.push(data[cocktail]);
 							$scope.updateCurrentCard()
@@ -39,10 +39,10 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 			for (var cocktail in Cocktails) {
 				if (Cocktails.hasOwnProperty(cocktail)
 				  && !data[cocktail]
-				  && $scope.queue.length < $scope.newCardsPerDay) {
+				  && $scope.queue.length < $scope.newCardsPerDay) { // Not sure what I was thinking here...
 					$scope.$apply(function() {
 						$scope.queue.push(Cocktails[cocktail]);
-						$scope.updateCurrentCard()
+						$scope.updateCurrentCard();
 					});
 				}
 			}
@@ -67,7 +67,7 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 	$scope.rightSideUp = true;
 
 	$scope.flipCard = function() {
-		$scope.rightSideUp = !$scope.rightSideUp
+		$scope.rightSideUp = false;// !$scope.rightSideUp
 	}
 
 	$scope.rateCard = function(score) {
