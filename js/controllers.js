@@ -8,8 +8,10 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 		$scope.rightSideUp = true;
 		if ($scope.queue.length > 0) {
 			$scope.currentCard = $scope.queue[0];
+			chrome.browserAction.setBadgeText({text: $scope.queue.length.toString()});
 		} else {
 			$scope.currentCard = null;
+			chrome.browserAction.setBadgeText({text: ''});
 			// $scope.getFreshCards()
 		}
 	}
@@ -47,6 +49,16 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 				}
 			}
 		});
+	}
+
+	$scope.howManyCardsLeftText = function() {
+		if ($scope.queue.length > 1) {
+			return $scope.queue.length + " cards left today";
+		} else if ($scope.queue.length === 1) {
+			return $scope.queue.length + " card left today";
+		} else {
+			return "";
+		}
 	}
 
 	$scope.noMoreCards = function() {

@@ -9,9 +9,9 @@
 </head>
 <body ng-app="app" ng-controller="MainController" ng-init="fillQueue()" ng-keydown="keyReader($event)">
 	<div id="mainPopup">
-		<span>{{queue.length}} cards left today</span>
+		<span ng-hide="noMoreCards()">{{howManyCardsLeftText()}}</span>
 		<div class="textbox">
-			<div ng-show="!noMoreCards()">
+			<div ng-hide="noMoreCards()">
 				<span class="name" ng-show="rightSideUp">{{currentCard.name}}</span>
 				<ul class="recipe">
 				<li ng-repeat="line in currentCard.recipe" ng-hide="rightSideUp">{{line}}</li>

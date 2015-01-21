@@ -13,8 +13,7 @@
   },
   "default_locale": "en",
   "background": {
-    "page": "src/bg/background.html",
-    "persistent": false
+    "scripts": ["background.js"]
   },
   "options_page": "src/options/index.html",
   "browser_action": {
