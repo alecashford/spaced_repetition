@@ -12,10 +12,11 @@
 		<span id="counter" ng-hide="noMoreCards()">{{howManyCardsLeftText()}}</span>
 		<div class="textbox">
 			<div ng-hide="noMoreCards()">
-				<span class="name" ng-show="rightSideUp">{{currentCard.name}}</span>
-				<ul class="recipe">
-				<li ng-repeat="line in currentCard.recipe" ng-hide="rightSideUp">{{line}}</li>
-				</ul>
+				<span class="name" ng-show="rightSideUp"><b>{{currentCard.name}}</b></span>
+					<ul class="recipe" ng-hide="rightSideUp">
+						<li><b>{{currentCard.name}}</b></li>
+						<li ng-repeat="line in currentCard.recipe">{{line}}</li>
+					</ul>
 				<div id="buttons" ng-hide="rightSideUp">
 					<button ng-click="rateCard(0)">0</button>
 					<button ng-click="rateCard(1)">1</button>

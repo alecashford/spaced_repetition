@@ -1,4 +1,11 @@
-setInterval(function() {
+var now = new Date();
+var millisTill00 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 1, 0, 0) - now;
+if (millisTill00 < 0) {
+     millisTill00 += 86400000;
+}
+setTimeout(function(){
+
+	setInterval(function() {
 
 	var queue = [];
 
@@ -17,4 +24,12 @@ setInterval(function() {
 	})
 
 
-}, 60 * 1000);
+}, 86400000);
+
+}, millisTill00);
+
+
+
+
+
+
