@@ -11,7 +11,7 @@ app.controller('MainController', ['$scope', 'Cocktails', function($scope, Cockta
 			chrome.browserAction.setBadgeText({text: $scope.queue.length.toString()});
 		} else {
 			$scope.currentCard = null;
-			chrome.browserAction.setBadgeText({text: ''});
+			chrome.browserAction.setBadgeText({text: null});
 		}
 	}
 

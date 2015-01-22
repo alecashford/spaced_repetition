@@ -26,7 +26,7 @@
 					<button ng-click="rateCard(5)">5</button>
 				</div>
 			</div>
-			<div ng-show="noMoreCards()">
+			<div id="no_more" ng-show="noMoreCards()">
 				<span id="no_more_text">No more cards to review for today!</span>
 				<button id="no_more_text" ng-click="getFreshCards()">Learn more?</button>
 			</div>
