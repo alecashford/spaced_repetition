@@ -16,7 +16,7 @@ setInterval(function() {
 			if (queue.length > 0) {
 				chrome.browserAction.setBadgeText({text: queue.length.toString()});
 			} else {
-				chrome.browserAction.setBadgeText({text: ''});
+				chrome.browserAction.setBadgeText({text: null});
 			}
 		}
 	})
